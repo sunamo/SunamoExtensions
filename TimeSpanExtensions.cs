@@ -1,7 +1,7 @@
+namespace SunamoExtensions;
+
 public static partial class TimeSpanExtensions
 {
-    
-
     public static string ToNiceString(this TimeSpan timeSpan)
     {
         string ret = timeSpan.ToString();

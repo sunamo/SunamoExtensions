@@ -1,4 +1,6 @@
-    internal class SBH
-    {
+namespace SunamoExtensions.Helpers;
 
-    }
+public class SBH
+{
+
+}

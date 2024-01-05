@@ -1,3 +1,5 @@
+namespace SunamoExtensions;
+
 public static partial class ListExtensions
 {
 

@@ -1,3 +1,6 @@
+namespace SunamoExtensions;
+
+
 public static partial class TaskExtensions
 {
     #region For easy copy from TaskExtensionsSunamo.cs

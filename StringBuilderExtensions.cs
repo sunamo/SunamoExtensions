@@ -1,6 +1,9 @@
+namespace SunamoExtensions;
+
+
 public static partial class StringBuilderExtensions
 {
-    public static void AppendFormatLine(this StringBuilder sb, string test, params object[] args)
+    public static void AppendFormatLine(this StringBuilder sb, string test, params string[] args)
     {
         sb.AppendFormat(test, args);
         sb.AppendLine();

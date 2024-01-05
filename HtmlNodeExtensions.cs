@@ -1,7 +1,9 @@
-    /// <summary>
-    /// Not working, put into HtmlAssistant
-    /// </summary>
-    public static class HtmlNodeExtensions
-    {
-        
-    }
+namespace SunamoExtensions;
+
+/// <summary>
+/// Not working, put into HtmlAssistant
+/// </summary>
+public static class HtmlNodeExtensions
+{
+
+}

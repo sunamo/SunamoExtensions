@@ -1,4 +1,7 @@
-﻿public static partial class IListExtensions
+namespace SunamoExtensions;
+
+
+public static partial class IListExtensions
 {
     #region For easy copy from IListExtensionsShared64Sunamo.cs
     /// <summary>
@@ -15,7 +18,8 @@
         return l;
     }
 
-    public static string DumpAsString<T>(this IList<T> ie, string operation, DumpAsStringHeaderArgs a)
+    // todo DumpAsStringHeaderArgs je ve SunamoShared který nemůži přidat do deps protože by to způsobilo chybu Cycle detected
+    public static string DumpAsString<T>(this IList<T> ie, string operation, /*DumpAsStringHeaderArgs*/ object a)
     {
         throw new Exception("Nemůže tu být protože DumpListAsStringOneLine jsem přesouval do sunamo a tam už zůstane");
         //
@@ -29,24 +33,60 @@
     //}
 
     #region Cant be first because then have priority than LINQ method
-    //public static object First(this IList e)
-    //{
-    //    return FirstOrNull(e);
-    //}
+    /// <summary>
+    /// Cant be first because then have priority than LINQ method
+    /// musel bych ke každé přidávat typový argument
+    ///
+    /// => Renamed to 2
+    /// </summary>
+    /// <param name="e"></param>
+    /// <returns></returns>
+    public static object First2(this IList e)
+    {
+        return FirstOrNull(e);
+    }
     #endregion
     #endregion
 
-    public static int Length<T>(this IList<T> e)
+    public static int Length2<T>(this IList<T> e)
     {
         return Enumerable.Count(e);
         //return CASE.Count(e);
     }
 
-    // přejmenoval jsem po převodu na global usings
+    /// <summary>
+    /// přejmenoval jsem po převodu na global usings
+    ///
+    ///
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="e"></param>
+    /// <returns></returns>
     public static int Count2<T>(this IList<T> e)
     {
         return Enumerable.Count(e);
         //return CASE.Count(e);
+    }
+
+    /// <summary>
+    ///     Usage: in many places coz in Extensions is standard IList
+    ///
+    /// The call is ambiguous between the following methods or properties: 'IListExtensions.Count(System.Collections.IList)' and 'IListExtensions.Count(System.Collections.IList)'
+    /// IListExtensions je pouze ve SunExt, i po pushi nového package furt to samé.
+    /// přejmenováno na 3 a kdyžtak užívat Enumerable.Count
+    ///
+    ///
+    /// </summary>
+    /// <param name="e"></param>
+    /// <returns></returns>
+    public static int Count3(this IList e)
+    {
+        int i = 0;
+        foreach (var item in e)
+        {
+            i++;
+        }
+        return i;
     }
     #endregion
 

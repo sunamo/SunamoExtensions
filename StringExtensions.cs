@@ -1,3 +1,5 @@
+namespace SunamoExtensions;
+
 public static class StringExtensions
 {
     public static string FirstCharLower(this string s)

@@ -1,3 +1,6 @@
+namespace SunamoExtensions;
+
+
 public static partial class ListExtensions
 {
     public static void AddRangeIfNotContain<T>(this IList<T> list, List<T> l)

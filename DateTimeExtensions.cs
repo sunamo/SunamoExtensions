@@ -1,14 +1,16 @@
+namespace SunamoExtensions;
+
 public static class DateTimeExtensions
 {
 
     public static string ToLongTimeString(this DateTime dt)
     {
-        return dt.Hour + AllStrings.colon + dt.Minute + AllStrings.colon + dt.Second;
+        return dt.Hour + AllStringsSE.colon + dt.Minute + AllStringsSE.colon + dt.Second;
     }
 
     public static string ToShortTimeString(this DateTime dt)
     {
-        return dt.Hour + AllStrings.colon + dt.Minute;
+        return dt.Hour + AllStringsSE.colon + dt.Minute;
     }
 
     public static string ToStringShortTimeNullable(this DateTime? dt)

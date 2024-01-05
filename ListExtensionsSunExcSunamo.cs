@@ -1,3 +1,6 @@
+namespace SunamoExtensions;
+
+
 public static partial class ListExtensions
 {
     #region For easy copy from ListExtensionsSunamo.cs

@@ -1,3 +1,6 @@
+namespace SunamoExtensions;
+
+
 public static partial class StringBuilderExtensions
 {
     #region For easy copy from StringBuilderExtensions.cs
