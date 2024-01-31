@@ -3,19 +3,19 @@
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TargetFramework>net8.0</TargetFramework>
-    <Version>24.1.10.1</Version>
+    <Version>24.1.24.1</Version>
     <Description>Almost all extensions method which I'm using</Description>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoArgs" Version="24.1.11.1" />
-    <PackageReference Include="SunamoI18N" Version="24.1.10.1" />
-    <PackageReference Include="SunamoValues" Version="24.1.10.1" />
-    <PackageReference Include="SunamoEnums" Version="24.1.10.1" />
-    <PackageReference Include="SunamoExceptions" Version="24.1.11.1" />
-    <PackageReference Include="SunamoThread" Version="24.1.10.1" />
+    <PackageReference Include="SunamoArgs" Version="24.1.24.1" />
+    <PackageReference Include="SunamoBts" Version="24.1.24.1" />
+    <PackageReference Include="SunamoI18N" Version="24.1.14.1" />
+    <PackageReference Include="SunamoEnums" Version="24.1.14.1" />
+    <PackageReference Include="SunamoExceptions" Version="24.1.14.1" />
+    <PackageReference Include="SunamoThread" Version="24.1.14.1" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>

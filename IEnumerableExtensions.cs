@@ -3,6 +3,28 @@ namespace SunamoExtensions;
 
 public static partial class IListExtensions
 {
+    public static object FirstOrNull(this IEnumerable e)
+    {
+        foreach (var item in e)
+        {
+            return item;
+        }
+
+        return null;
+    }
+
+    public static int Count(this IEnumerable e)
+    {
+        int i = 0;
+
+        foreach (var item in e)
+        {
+            i++;
+        }
+
+        return i;
+    }
+
     #region For easy copy from IListExtensionsShared64Sunamo.cs
     /// <summary>
     /// Must be written with type parameter
