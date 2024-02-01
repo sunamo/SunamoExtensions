@@ -26,7 +26,7 @@ public static partial class TaskExtensions
             {
                 sb.AppendLine(Exceptions.TextOfExceptions(exception));
             }
-            ThrowEx.Custom(sb.ToString());
+            throw new Exception(sb.ToString());
         },
         TaskContinuationOptions.OnlyOnFaulted);
     }

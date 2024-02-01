@@ -1,6 +1,8 @@
+namespace SunamoExtensions._sunamo;
+
 //namespace SunamoExtensions._sunamo;
 
-//public class RH
+//internal class RH
 //{
-//    public static Func<Type, GetMemberArgs, List<FieldInfo>> GetConsts;
+//    internal static Func<Type, GetMemberArgs, List<FieldInfo>> GetConsts;
 //}

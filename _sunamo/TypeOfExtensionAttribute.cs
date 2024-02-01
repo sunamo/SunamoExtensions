@@ -1,10 +1,12 @@
+namespace SunamoExtensions._sunamo;
+
 //namespace SunamoExtensions._sunamo;
 
-//public class TypeOfExtensionAttribute : Attribute
+//internal class TypeOfExtensionAttribute : Attribute
 //{
-//    public TypeOfExtension Type { get; set; }
+//    internal TypeOfExtension Type { get; set; }
 
-//    public TypeOfExtensionAttribute(TypeOfExtension toe)
+//    internal TypeOfExtensionAttribute(TypeOfExtension toe)
 //    {
 //        Type = toe;
 //    }
