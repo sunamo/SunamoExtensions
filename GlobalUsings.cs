@@ -13,4 +13,3 @@ global using System.Diagnostics;
 global using SunamoExceptions;
 global using System.Data;
 global using System.Xml;
-global using SunamoThread;

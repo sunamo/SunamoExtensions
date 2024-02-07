@@ -18,17 +18,19 @@ public static partial class IListExtensions
     }
     #region from IListExtensionsShared64.cs
 
-    public static object FirstOrNull(this IList e)
-    {
-        if (e.Count > 0)
-        {
-            // Here cant call CA.ToList because in FirstOrNull is called in CA.ToList => StackOverflowException
-            System.Collections.Generic.List<object> c = CAThread.ToList(e);
-            return c.FirstOrDefault();
-        }
+    //public static object FirstOrNull(this IList e)
+    //{
+    //    if (e.Count > 0)
+    //    {
+    //        // Here cant call CA.ToList because in FirstOrNull is called in CA.ToList => StackOverflowException
+    //        //System.Collections.Generic.List<object> c = CAThread.ToList(e);
+    //        //return c.FirstOrDefault();
 
-        return null;
-    }
+    //        return e.First2();
+    //    }
+
+    //    return null;
+    //}
 
 
 
