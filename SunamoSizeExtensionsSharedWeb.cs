@@ -1,6 +1,6 @@
 namespace SunamoExtensions;
 
-public static partial class SunamoSizeExtensions
+public static class SunamoSizeExtensions
 {
 
 }

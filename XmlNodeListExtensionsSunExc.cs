@@ -1,6 +1,6 @@
 namespace SunamoExtensions;
 
-public static partial class XmlNodeListExtensions
+public static class XmlNodeListExtensions
 {
     #region For easy copy from XmlNodeListExtensions.cs
     public static bool Contains(this XmlNodeList e, XmlNode n)
