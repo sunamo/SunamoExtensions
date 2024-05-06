@@ -1,6 +1,6 @@
-namespace SunamoExtensions;
+﻿namespace SunamoExtensions;
 
-public class AssertExtensions : TranslateAble
+public class AssertExtensions /*: TranslateAble - pryč kvůli přerodu k nuget packages*/
 {
 
     public static string xCountInAAndBIsNotEqual = "CountInAAndBIsNotEqual";

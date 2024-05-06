@@ -1,3 +1,5 @@
+using SunamoExtensions._sunamo;
+
 namespace SunamoExtensions;
 
 public static class ObjectExtensions

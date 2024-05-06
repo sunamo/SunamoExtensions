@@ -23,7 +23,8 @@ public static class TaskExtensions
 
                 foreach (var exception in aggException.InnerExceptions)
                 {
-                    sb.AppendLine(Exceptions.TextOfExceptions(exception));
+                    throw new Exception("");
+                    //sb.AppendLine(Exceptions.TextOfExceptions(exception));
                 }
                 throw new Exception(sb.ToString());
             },
