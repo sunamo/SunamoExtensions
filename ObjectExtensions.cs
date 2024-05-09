@@ -1,6 +1,12 @@
 using SunamoExtensions._sunamo;
 
-namespace SunamoExtensions;
+namespace
+#if SunamoReflection
+SunamoReflection
+#else SunamoExtensions
+SunamoExtensions
+#endif
+;
 
 public static class ObjectExtensions
 {
