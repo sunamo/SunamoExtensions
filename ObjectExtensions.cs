@@ -3,7 +3,7 @@ using SunamoExtensions._sunamo;
 namespace
 #if SunamoReflection
 SunamoReflection
-#else SunamoExtensions
+#else
 SunamoExtensions
 #endif
 ;
