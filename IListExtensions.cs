@@ -1,4 +1,6 @@
 
+namespace SunamoExtensions;
+
 using System.Runtime.CompilerServices;
 
 namespace

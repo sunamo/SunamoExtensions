@@ -1,4 +1,4 @@
-namespace SunamoExtensions.Utf8Json;
+namespace SunamoExtensions;
 
 // Unity compiler can't understand this.
 

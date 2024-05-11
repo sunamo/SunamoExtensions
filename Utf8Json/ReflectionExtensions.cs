@@ -1,4 +1,4 @@
-namespace SunamoExtensions.Utf8Json;
+namespace SunamoExtensions;
 
 public static class ReflectionExtensions
 {

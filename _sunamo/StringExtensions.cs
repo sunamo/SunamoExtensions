@@ -1,4 +1,4 @@
-namespace SunamoExtensions._sunamo;
+namespace SunamoExtensions;
 
 public static class StringExtensions
 {

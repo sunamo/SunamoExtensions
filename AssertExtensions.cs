@@ -1,4 +1,4 @@
-﻿namespace SunamoExtensions;
+namespace SunamoExtensions;
 
 public class AssertExtensions /*: TranslateAble - pryč kvůli přerodu k nuget packages*/
 {

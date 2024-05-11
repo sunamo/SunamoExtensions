@@ -1,4 +1,4 @@
-namespace SunamoExtensions.Helpers;
+namespace SunamoExtensions;
 
 public class SBH
 {
