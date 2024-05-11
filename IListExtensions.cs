@@ -1,4 +1,5 @@
-using SunamoExtensions._sunamo;
+
+using System.Runtime.CompilerServices;
 
 namespace SunamoExtensions;
 
@@ -161,7 +162,7 @@ public static class IListExtensions
 
     public static List<object> WhereNonGeneric(this IList enu, Func<object, bool> predicate)
     {
-        List<object> o = new List<object>(CASE.Count(enu));
+        List<object> o = new List<object>(Count(enu));
         foreach (var item in enu)
         {
             o.Add(item);
