@@ -1,7 +1,14 @@
 
 using System.Runtime.CompilerServices;
 
-namespace SunamoExtensions;
+namespace
+#if SunamoCollections
+SunamoCollections
+#else
+    SunamoExtensions
+#endif
+;
+
 
 public static class IListExtensions
 {

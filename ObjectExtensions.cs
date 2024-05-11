@@ -19,6 +19,6 @@ public static class ObjectExtensions
         CASE.Trim(l);
         l.RemoveAt(0);
 
-        return SHSE.JoinNL(l);
+        return SHSunamoExceptions.JoinNL(l);
     }
 }
