@@ -6,7 +6,7 @@ namespace
 #if SunamoCollections
 SunamoCollections
 #else
-    SunamoExtensions
+SunamoExtensions
 #endif
 ;
 
