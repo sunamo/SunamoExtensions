@@ -27,7 +27,6 @@
     <Compile Include="..\SunamoFubuCore\Attributes.cs" Link="_linked\SunamoFubuCore\Attributes.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoStringGetLines" Version="24.2.6.2" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC;SunamoExtensions</DefineConstants>
