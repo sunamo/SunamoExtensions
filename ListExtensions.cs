@@ -5,7 +5,6 @@ SunamoDevCode
 SunamoExtensions
 #endif
 ;
-
 public static class ListExtensions
 {
     #region For easy copy from ListExtensionsSunamo.cs
@@ -21,7 +20,6 @@ public static class ListExtensions
     {
         if (rnd != null)
             list.Swap(end, rnd.Next(start, end + 1));
-
         var pivot = list[end];
         var lastLow = start - 1;
         for (var i = start; i < end; i++)
@@ -32,7 +30,6 @@ public static class ListExtensions
         list.Swap(end, ++lastLow);
         return lastLow;
     }
-
     /// <summary>
     /// Returns Nth smallest element from the list. Here n starts from 0 so that n=0 returns minimum, n=1 returns 2nd smallest element etc.
     /// Note: specified list would be mutated in the process.
@@ -42,7 +39,6 @@ public static class ListExtensions
     {
         return NthOrderStatistic(list, n, 0, list.Count - 1, rnd);
     }
-
     private static T NthOrderStatistic<T>(this IList<T> list, int n, int start, int end, Random rnd) where T : IComparable<T>
     {
         while (true)
@@ -50,14 +46,12 @@ public static class ListExtensions
             var pivotIndex = list.Partition(start, end, rnd);
             if (pivotIndex == n)
                 return list[pivotIndex];
-
             if (n < pivotIndex)
                 end = pivotIndex - 1;
             else
                 start = pivotIndex + 1;
         }
     }
-
     /// <summary>
     /// Js() With Leading should be always the last in code
     /// Js() With Add should be first in code
@@ -69,7 +63,6 @@ public static class ListExtensions
         list.Insert(0, item);
         return list;
     }
-
     public static List<T> AddOrSet<T>(this IList<T> list, int dx, T item)
     {
         if (list.Count > dx)
@@ -83,7 +76,6 @@ public static class ListExtensions
         return list.ToList();
     }
     #endregion
-
     public static void RemoveMany<T>(this IList<T> list, List<T> l)
     {
         foreach (var item in l)
@@ -91,7 +83,6 @@ public static class ListExtensions
             list.Remove(item);
         }
     }
-
     public static void RemoveMany(this IList<string> list, List<string> l)
     {
         foreach (var item in l)
@@ -99,7 +90,6 @@ public static class ListExtensions
             list.Remove(item);
         }
     }
-
     /// <summary>
     /// Nepoužívat toto na přidávání js, vloží se v špatném pořadí, pak to dělá function is not defined!
     /// </summary>
@@ -111,7 +101,6 @@ public static class ListExtensions
         list.Add(item);
         return (List<T>)list;
     }
-
     public static void AddRangeIfNotContain<T>(this IList<T> list, List<T> l)
     {
         foreach (var item in l)
@@ -122,8 +111,6 @@ public static class ListExtensions
             }
         }
     }
-
-
     /// <summary>
     /// Direct edit
     /// </summary>
@@ -136,10 +123,8 @@ public static class ListExtensions
         {
             list.Insert(0, items[i]);
         }
-
         return list;
     }
-
     public static List<T> Insert<T>(this IList<T> list, int dx, T item)
     {
         list.Insert(dx, item);

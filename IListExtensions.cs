@@ -1,7 +1,4 @@
-
-
 using System.Runtime.CompilerServices;
-
 namespace
 #if SunamoCollections
 SunamoCollections
@@ -9,8 +6,6 @@ SunamoCollections
 SunamoExtensions
 #endif
 ;
-
-
 public static class IListExtensions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23,7 +18,6 @@ public static class IListExtensions
         list[dx2] = temp;
     }
     #region from IListExtensionsShared64.cs
-
     //public static object FirstOrNull(this IList e)
     //{
     //    if (e.Count > 0)
@@ -31,39 +25,28 @@ public static class IListExtensions
     //        // Here cant call CA.ToList because in FirstOrNull is called in CA.ToList => StackOverflowException
     //        //System.Collections.Generic.List<object> c = CAThread.ToList(e);
     //        //return c.FirstOrDefault();
-
     //        return e.First2();
     //    }
-
     //    return null;
     //}
-
-
-
     #endregion
-
     public static object FirstOrNull(this IEnumerable e)
     {
         foreach (var item in e)
         {
             return item;
         }
-
         return null;
     }
-
     public static int Count(this IEnumerable e)
     {
         int i = 0;
-
         foreach (var item in e)
         {
             i++;
         }
-
         return i;
     }
-
     #region For easy copy from IListExtensionsShared64Sunamo.cs
     /// <summary>
     /// Must be written with type parameter
@@ -78,7 +61,6 @@ public static class IListExtensions
         l.RemoveAt(dx);
         return l;
     }
-
     // todo DumpAsStringHeaderArgs je ve SunamoShared který nemůži přidat do deps protože by to způsobilo chybu Cycle detected
     public static string DumpAsString<T>(this IList<T> ie, string operation, /*DumpAsStringHeaderArgs*/ object a)
     {
@@ -86,13 +68,11 @@ public static class IListExtensions
         //
         //return RHSE.DumpListAsStringOneLine(operation, ie, a);
     }
-
     #region Must be two coz in some projects is not Dispatcher
     //public static object FirstOrNull(this IList e)
     //{
     //    return se.IListExtensions.FirstOrNull(e);
     //}
-
     #region Cant be first because then have priority than LINQ method
     /// <summary>
     /// Cant be first because then have priority than LINQ method
@@ -108,13 +88,11 @@ public static class IListExtensions
     }
     #endregion
     #endregion
-
     public static int Length2<T>(this IList<T> e)
     {
         return Enumerable.Count(e);
         //return CASE.Count(e);
     }
-
     /// <summary>
     /// přejmenoval jsem po převodu na global usings
     ///
@@ -128,7 +106,6 @@ public static class IListExtensions
         return Enumerable.Count(e);
         //return CASE.Count(e);
     }
-
     /// <summary>
     ///     Usage: in many places coz in Extensions is standard IList
     ///
@@ -150,24 +127,20 @@ public static class IListExtensions
         return i;
     }
     #endregion
-
     public static void SortAsc<T>(this List<T> c)
     {
         c.Sort();
     }
-
     public static IList<T> TakeLast<T>(this IList<T> source, int N)
     {
         return source.Skip(Math.Max(0, source.Count - N)).ToList();
     }
-
     public static IList<TSource> Where2<TSource>(this IList<TSource> source, Func<TSource, bool> predicate)
     {
         //source.ToList().Where(predicate); - StackOverflowExtension
         //return new List<TSource>(source).Where(predicate) ;
         return source.ToList().Where(predicate).ToList();
     }
-
     public static List<object> WhereNonGeneric(this IList enu, Func<object, bool> predicate)
     {
         List<object> o = new List<object>(Count(enu));
@@ -175,10 +148,8 @@ public static class IListExtensions
         {
             o.Add(item);
         }
-
         return o.Where(predicate).ToList();
     }
-
     /// <summary>
     /// Not direct edit
     /// </summary>
