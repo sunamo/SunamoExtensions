@@ -25,7 +25,7 @@ public class SHSE
 
         if (autoTrim)
         {
-            CASE.Trim(vr);
+            vr = vr.ConvertAll(d => d.Trim());
         }
 
         return vr;

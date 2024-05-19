@@ -15,7 +15,7 @@ public static class ObjectExtensions
         StackTrace st = new StackTrace();
 
         var v = st.ToString();
-        var l = SHSE.GetLines(v);
+        var l = SHGetLines.GetLines(v);
         CASE.Trim(l);
         l.RemoveAt(0);
 

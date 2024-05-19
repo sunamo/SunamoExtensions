@@ -1,4 +1,10 @@
-namespace SunamoExtensions;
+namespace
+#if SunamoDateTime
+SunamoDateTime
+#else
+SunamoExtensions
+#endif
+;
 
 public static class TimeSpanExtensions
 {
