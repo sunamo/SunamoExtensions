@@ -17,6 +17,11 @@
     <Compile Include="..\SunamoExceptions\OnlyInSE\Exceptions.cs" Link="_linked\SunamoExceptions\OnlyInSE\Exceptions.cs" />
     <Folder Include="_linked\SunamoExtensions\" />
     <Compile Include="..\SunamoValues\Consts.cs" Link="_linked\SunamoValues\Consts.cs" />
+    <Compile Include="..\SunamoExceptions\_AddedToAllCsproj\CASunamoExceptions.cs" Link="_linked\SunamoExceptions\_AddedToAllCsproj\CASunamoExceptions.cs" />
+    <Compile Include="..\SunamoExceptions\OnlyInSE\ThrowEx.cs" Link="_linked\SunamoExceptions\OnlyInSE\ThrowEx.cs" />
+    <Compile Include="..\SunamoExceptions\OnlyInSE\TranslateAble.cs" Link="_linked\SunamoExceptions\OnlyInSE\TranslateAble.cs" />
+    <Compile Include="..\SunamoExceptions\_AddedToAllCsproj\FSSunamoExceptions.cs" Link="_linked\SunamoExceptions\_AddedToAllCsproj\FSSunamoExceptions.cs" />
+    <Compile Include="..\SunamoXlfKeys\XlfKeys.cs" Link="_linked\SunamoXlfKeys\XlfKeys.cs" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
