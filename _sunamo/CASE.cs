@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoExtensions;
-internal class CASE
+public class CASE
 {
-    internal static int Count(IEnumerable e)
+    public static int Count(IEnumerable e)
     {
         if (e == null) return 0;
 
@@ -31,7 +31,7 @@ internal class CASE
         return count;
     }
 
-    internal static List<string> Trim(List<string> l)
+    public static List<string> Trim(List<string> l)
     {
         for (var i = 0; i < l.Count; i++) l[i] = l[i].Trim();
 

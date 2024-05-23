@@ -1,13 +1,13 @@
 namespace SunamoExtensions;
 
-internal static class StringExtensions
+public static class StringExtensions
 {
-    internal static string FirstCharLower(this string s)
+    public static string FirstCharLower(this string s)
     {
         return SHSE.FirstCharLower(s);
     }
 
-    internal static IList<string> SplitAndKeep(this string s, List<string> delims)
+    public static IList<string> SplitAndKeep(this string s, List<string> delims)
     {
         //    // delims allow only char[], not List<string>
         //    //int start = 0, index;

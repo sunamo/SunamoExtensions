@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoExtensions;
-internal class SHSE
+public class SHSE
 {
-    internal static string FirstCharLower(string nazevPP)
+    public static string FirstCharLower(string nazevPP)
     {
         if (nazevPP.Length < 2) return nazevPP;
 
@@ -16,7 +16,7 @@ internal class SHSE
         return nazevPP[0].ToString().ToLower() + sb;
     }
 
-    internal static List<string> GetLines(string p, bool autoTrim = false)
+    public static List<string> GetLines(string p, bool autoTrim = false)
     {
         List<string> vr = new();
         StringReader sr = new(p);
@@ -31,7 +31,7 @@ internal class SHSE
         return vr;
     }
 
-    internal static string JoinNL(List<string> l)
+    public static string JoinNL(List<string> l)
     {
         StringBuilder sb = new();
         foreach (var item in l) sb.AppendLine(item);
