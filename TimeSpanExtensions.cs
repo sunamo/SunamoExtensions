@@ -1,3 +1,5 @@
+
+namespace SunamoExtensions;
 public static class TimeSpanExtensions
 {
     #region For easy copy from TimeSpanExtensionsSunamo.cs

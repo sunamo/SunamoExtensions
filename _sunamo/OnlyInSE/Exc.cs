@@ -1,3 +1,5 @@
+
+namespace SunamoExtensions;
 using System.Diagnostics;
 using System.Text;
 

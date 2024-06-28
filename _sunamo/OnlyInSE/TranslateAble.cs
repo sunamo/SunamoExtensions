@@ -1,3 +1,5 @@
+
+namespace SunamoExtensions;
 public class TranslateAble
 {
     

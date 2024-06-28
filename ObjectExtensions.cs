@@ -1,3 +1,5 @@
+
+namespace SunamoExtensions;
 public static class ObjectExtensions
 {
     public static string GetStackTrace(this object o)
