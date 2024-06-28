@@ -1,10 +1,3 @@
-namespace
-#if SunamoReflection
-SunamoReflection
-#else
-SunamoExtensions
-#endif
-;
 public static class ObjectExtensions
 {
     public static string GetStackTrace(this object o)

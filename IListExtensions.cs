@@ -1,11 +1,4 @@
 using System.Runtime.CompilerServices;
-namespace
-#if SunamoCollections
-SunamoCollections
-#else
-SunamoExtensions
-#endif
-;
 public static class IListExtensions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

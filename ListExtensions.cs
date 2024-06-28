@@ -1,10 +1,3 @@
-namespace
-#if SunamoDevCode
-SunamoDevCode
-#else
-SunamoExtensions
-#endif
-;
 public static class ListExtensions
 {
     #region For easy copy from ListExtensionsSunamo.cs

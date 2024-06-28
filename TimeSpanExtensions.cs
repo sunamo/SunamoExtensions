@@ -1,10 +1,3 @@
-namespace
-#if SunamoDateTime
-SunamoDateTime
-#else
-SunamoExtensions
-#endif
-;
 public static class TimeSpanExtensions
 {
     #region For easy copy from TimeSpanExtensionsSunamo.cs
