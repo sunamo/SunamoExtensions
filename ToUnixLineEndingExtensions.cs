@@ -1,4 +1,4 @@
-namespace SunamoFileIO;
+namespace SunamoExtensions;
 
 
 public static partial class ToUnixLineEndingExtensions
