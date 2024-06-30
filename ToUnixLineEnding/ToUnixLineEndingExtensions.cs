@@ -1,7 +1,7 @@
 namespace SunamoExtensions.ToUnixLineEnding;
 
 
-public static partial class ToUnixLineEndingExtensions
+public static class ToUnixLineEndingExtensions
 {
     public static IList<string> ToUnixLineEnding(this IList<string> t)
     {

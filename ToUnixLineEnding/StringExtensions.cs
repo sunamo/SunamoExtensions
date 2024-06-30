@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public static partial class StringExtensionsToUnixLineEndingExtensions
+public static class StringExtensionsToUnixLineEndingExtensions
 {
     public static string ToUnixLineEnding(this string s)
     {

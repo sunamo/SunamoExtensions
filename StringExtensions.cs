@@ -1,6 +1,6 @@
 namespace SunamoExtensions;
 
-public static partial class StringExtensions
+public static class StringExtensions
 {
     internal static string FirstCharLower(this string s)
     {
