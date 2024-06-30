@@ -1,4 +1,4 @@
-namespace SunamoExtensions;
+namespace SunamoExtensions.ToUnixLineEnding;
 
 
 public static partial class ToUnixLineEndingExtensions
@@ -12,10 +12,4 @@ public static partial class ToUnixLineEndingExtensions
         return t;
     }
 }
-public static partial class StringExtensions
-{
-    public static string ToUnixLineEnding(this string s)
-    {
-        return s.ReplaceLineEndings("\n");
-    }
-}
+
