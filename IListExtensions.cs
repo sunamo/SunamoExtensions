@@ -1,6 +1,4 @@
-
 namespace SunamoExtensions;
-using System.Runtime.CompilerServices;
 public static class IListExtensions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

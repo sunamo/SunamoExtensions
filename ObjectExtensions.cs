@@ -1,4 +1,3 @@
-
 namespace SunamoExtensions;
 public static class ObjectExtensions
 {

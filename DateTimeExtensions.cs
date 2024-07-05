@@ -1,5 +1,3 @@
-
-
 namespace SunamoExtensions;
 
 public static class DateTimeExtensions

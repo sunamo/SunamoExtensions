@@ -25,3 +25,4 @@ global using SunamoExtensions._System.IO;
 global using SunamoExtensions._sunamo.SunamoExceptions.InSunamoIsDerivedFrom;
 global using SunamoExtensions._sunamo.SunamoExceptions.OnlyInSE;
 global using SunamoExtensions._sunamo.SunamoExceptions._AddedToAllCsproj;
+global using System.Net;
