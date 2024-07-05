@@ -12,5 +12,16 @@ global using System.Xml;
 global using System.Collections.Generic;
 global using System.Collections;
 global using System.IO;
-
 global using System.Diagnostics.CodeAnalysis;
+global using SunamoExtensions;
+global using SunamoExtensions.Helpers;
+global using SunamoExtensions.ToUnixLineEnding;
+global using SunamoExtensions.Utf8Json;
+global using SunamoExtensions._sunamo.SunamoExceptions;
+global using SunamoExtensions._sunamo.SunamoStringGetLines;
+global using SunamoExtensions._sunamo.SunamoValues;
+global using SunamoExtensions._sunamo.SunamoXlfKeys;
+global using SunamoExtensions._System.IO;
+global using SunamoExtensions._sunamo.SunamoExceptions.InSunamoIsDerivedFrom;
+global using SunamoExtensions._sunamo.SunamoExceptions.OnlyInSE;
+global using SunamoExtensions._sunamo.SunamoExceptions._AddedToAllCsproj;

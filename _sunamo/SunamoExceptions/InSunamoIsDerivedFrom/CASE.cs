@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoExtensions;
+namespace SunamoExtensions._sunamo.SunamoExceptions.InSunamoIsDerivedFrom;
 internal class CASE
 {
     internal static int Count(IEnumerable e)

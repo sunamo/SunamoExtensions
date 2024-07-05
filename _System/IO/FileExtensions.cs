@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoExtensions;
+namespace SunamoExtensions._System.IO;
 public class FileExtensions
 {
 
