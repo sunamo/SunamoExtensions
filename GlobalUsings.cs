@@ -15,7 +15,6 @@ global using System.IO;
 global using System.Diagnostics.CodeAnalysis;
 global using SunamoExtensions;
 global using SunamoExtensions.Helpers;
-global using SunamoExtensions.ToUnixLineEnding;
 global using SunamoExtensions.Utf8Json;
 global using SunamoExtensions._sunamo.SunamoExceptions;
 global using SunamoExtensions._sunamo.SunamoStringGetLines;
