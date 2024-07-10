@@ -11,18 +11,20 @@
     <RepositoryUrl>https://github.com/sunamo/SunamoExtensions.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Properties" />
     <Folder Include="_linked\SunamoExtensions\" />
+    <None Include="readme.md" Pack="True" PackagePath="." />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC;SunamoExtensions</DefineConstants>
+    <DefineConstants>$(DefineConstants);ASYNC;SunamoExtensions;SunamoExtensions.csproj</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC;SunamoExtensions</DefineConstants>
+    <DefineConstants>$(DefineConstants);ASYNC;SunamoExtensions;SunamoExtensions.csproj</DefineConstants>
   </PropertyGroup>
 </Project>
