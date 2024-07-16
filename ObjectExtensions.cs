@@ -9,6 +9,6 @@ public static class ObjectExtensions
         var l = SHGetLines.GetLines(v);
         CA.Trim(l);
         l.RemoveAt(0);
-        return SHSunamoExceptions.JoinNL(l);
+        return SH.JoinNL(l);
     }
 }
