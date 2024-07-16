@@ -16,3 +16,5 @@ global using SunamoExtensions._sunamo.SunamoStringGetLines;
 global using SunamoExtensions._sunamo.SunamoValues;
 global using SunamoExtensions._sunamo.SunamoExceptions.OnlyInSE;
 global using System.Net;
+global using SunamoExtensions._sunamo.SunamoExceptions;
+global using SunamoExtensions._sunamo.SunamoExceptions.InSunamoIsDerivedFrom;
