@@ -1,5 +1,6 @@
 namespace SunamoExtensions._sunamo.SunamoExceptions;
-internal class SHSE
+
+internal class SH
 {
     internal static string FirstCharLower(string nazevPP)
     {

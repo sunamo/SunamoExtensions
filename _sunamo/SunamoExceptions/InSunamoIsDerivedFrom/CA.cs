@@ -1,5 +1,6 @@
 namespace SunamoExtensions._sunamo.SunamoExceptions.InSunamoIsDerivedFrom;
-internal class CASE
+
+internal class CA
 {
     internal static int Count(IEnumerable e)
     {

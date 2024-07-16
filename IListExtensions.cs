@@ -1,4 +1,5 @@
 namespace SunamoExtensions;
+
 public static class IListExtensions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,7 +60,7 @@ public static class IListExtensions
     {
         throw new Exception("Nemůže tu být protože DumpListAsStringOneLine jsem přesouval do sunamo a tam už zůstane");
         //
-        //return RHSE.DumpListAsStringOneLine(operation, ie, a);
+        //return RH.DumpListAsStringOneLine(operation, ie, a);
     }
     #region Must be two coz in some projects is not Dispatcher
     //public static object FirstOrNull(this IList e)
@@ -84,7 +85,7 @@ public static class IListExtensions
     public static int Length2<T>(this IList<T> e)
     {
         return Enumerable.Count(e);
-        //return CASE.Count(e);
+        //return CA.Count(e);
     }
     /// <summary>
     /// přejmenoval jsem po převodu na global usings
@@ -97,7 +98,7 @@ public static class IListExtensions
     public static int Count2<T>(this IList<T> e)
     {
         return Enumerable.Count(e);
-        //return CASE.Count(e);
+        //return CA.Count(e);
     }
     /// <summary>
     ///     Usage: in many places coz in Extensions is standard IList

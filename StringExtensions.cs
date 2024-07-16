@@ -4,7 +4,7 @@ public static class StringExtensions
 {
     public static string FirstCharLower(this string s)
     {
-        return SHSE.FirstCharLower(s);
+        return SH.FirstCharLower(s);
     }
 
     public static IList<string> SplitAndKeep(this string s, List<string> delims)
