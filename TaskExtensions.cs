@@ -3,6 +3,7 @@ namespace SunamoExtensions;
 public static class TaskExtensions
 {
     #region For easy copy from TaskExtensionsSunamo.cs
+
     public static ConfiguredTaskAwaitable Conf(this Task t)
     {
         return t.ConfigureAwait(true);
@@ -21,14 +22,12 @@ public static class TaskExtensions
 
                 StringBuilder sb = new();
 
-                foreach (var exception in aggException.InnerExceptions)
-                {
-                    throw new Exception("");
-                    //sb.AppendLine(Exceptions.TextOfExceptions(exception));
-                }
+                foreach (var exception in aggException.InnerExceptions) throw new Exception("");
+                //sb.AppendLine(Exceptions.TextOfExceptions(exception));
                 throw new Exception(sb.ToString());
             },
             TaskContinuationOptions.OnlyOnFaulted);
     }
+
     #endregion
 }
