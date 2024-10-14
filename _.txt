@@ -1,4 +1,2 @@
-﻿nevěděl jsem proč vlastně extensions vzniklo
-tak jsem to znovu vše převedl do sunamo
-možná to bylo abych mohl extensions metody používat i bez sunamo
-už vím, je to proto že sunamo musí být netstandard a tam nejsou dřídy jako Point atd. bo ty jsou jen v .net5
+﻿Jednou provždy jsem si v tom udělal pořádek
+Myšlenka je furt stejná, v Exceptions se dělá veškerá kontrola a vrací se string
