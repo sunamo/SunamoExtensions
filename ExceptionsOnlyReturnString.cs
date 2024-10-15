@@ -180,4 +180,9 @@ Exception ex)
     {
         return CheckBefore(before) + " socket error: " + socketError;
     }
+
+    internal static string? KeyAlreadyExists<T>(string before, T? key, string nameOfDict)
+    {
+        return CheckBefore(before) + $"Key {key} already exists in {nameOfDict}";
+    }
 }

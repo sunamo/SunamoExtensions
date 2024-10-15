@@ -1,6 +1,10 @@
 namespace SunamoExceptions;
 public partial class ThrowEx
 {
+    public static bool KeyAlreadyExists<T, U>(Dictionary<T, U> dict, T key, string nameOfDict)
+    {
+        return ThrowIsNotNull(Exceptions.KeyAlreadyExists(FullNameOfExecutedCode(), key, nameOfDict));
+    }
     public static bool NotContains(string text, params string[] shouldContains)
     {
         return ThrowIsNotNull(Exceptions.NotContains(FullNameOfExecutedCode(), text, shouldContains));
