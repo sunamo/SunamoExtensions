@@ -40,7 +40,7 @@ internal class AllStrings
     internal static string cs2 = ": ";
     internal static string doubleSpace32160 = space + space160;
     internal static string doubleSpace16032 = space160 + space;
-    internal static string space160 = AllChars.space160.ToString();
+    internal static string space160 = ((char)160).ToString();
     internal static string doubleBs = bs + bs;
     internal const string period = ".";
     internal const string colon = ":";

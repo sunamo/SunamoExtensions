@@ -26,8 +26,8 @@ internal class Consts
     internal const string _5Asterisks = "*****";
     internal const string Test = "Test_";
     internal const string NoEntries = "No entries";
-    internal const string slashLocalhost = AllStrings.slash + sunamoNet;
-    internal const string slashScz = AllStrings.slash + Cz;
+    internal const string slashLocalhost = "/" + sunamoNet;
+    internal const string slashScz = "/" + Cz;
     internal const string dotScz = ".sunamo.cz";
     internal const string dotSczSlash = ".sunamo.cz/";
     internal const string sunamoNetSlash = "sunamo.net/";
@@ -55,7 +55,7 @@ internal class Consts
     internal const string http2 = "http";
     internal const string sunamo = "sunamo";
     internal const string sunamocz = "sunamocz";
-    internal const string bs = AllStrings.bs;
+    internal const string bs = "\\";
     internal const string tab = "\t";
     internal const string cr = "\t";
     internal const string UncLongPath = @"\\?\";

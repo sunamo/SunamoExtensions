@@ -7,9 +7,9 @@ partial class Exceptions
     }
     public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
-        if (ex == null) return Consts.se;
+        if (ex == null) return "";
         StringBuilder sb = new();
-        sb.Append(Consts.Exception);
+        sb.Append("Exception:");
         sb.AppendLine(ex.Message);
         if (alsoInner)
             while (ex.InnerException != null)
@@ -52,10 +52,10 @@ bool fillAlsoFirstTwo = true)
     {
         var s2 = l.Split("at ")[1].Trim();
         var s = s2.Split("(")[0];
-        var p = s.Split(new char[] { AllChars.dot }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        var p = s.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).ToList();
         methodName = p[^1];
         p.RemoveAt(p.Count - 1);
-        type = string.Join(AllStrings.dot, p);
+        type = string.Join(".", p);
     }
     internal static string CallingMethod(int v = 1)
     {
