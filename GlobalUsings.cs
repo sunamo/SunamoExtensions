@@ -11,3 +11,5 @@ global using System.Data;
 global using System.Xml;
 global using System.IO;
 global using SunamoExtensions._sunamo.SunamoStringGetLines;
+global using System.Diagnostics.CodeAnalysis;
+global using System.Net;
