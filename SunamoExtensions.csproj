@@ -18,6 +18,7 @@
     <Folder Include="Extensions\" />
     <Folder Include="Properties" />
     <Folder Include="_linked\SunamoExtensions\" />
+    <Folder Include="_sunamo\SunamoExceptions\" />
     <None Include="readme.md" Pack="True" PackagePath="." />
   </ItemGroup>
   <ItemGroup>
