@@ -13,3 +13,7 @@ global using System.IO;
 global using SunamoExtensions._sunamo.SunamoStringGetLines;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Net;
+global using SunamoExtensions;
+global using SunamoExtensions.Utf8Json;
+global using SunamoExtensions._sunamo;
+global using SunamoExtensions._sunamo.SunamoExceptions;
