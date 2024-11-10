@@ -287,18 +287,7 @@ Exception ex)
         return null;
     }
 
-    internal static string? LockedByBitLocker(string before, string path, Func<char, bool> IsLockedByBitLocker)
-    {
-        if (IsLockedByBitLocker != null)
-        {
-            var p = path[0];
-            if (IsLockedByBitLocker(p))
-            {
-                return CheckBefore(before) + $"Drive {p}:\\ is locked by BitLocker";
-            }
-        }
-        return null;
-    }
+
     internal static string? NotInt(string before, string what, int? value)
     {
         return !value.HasValue ? CheckBefore(before) + what + " is not with value " + value + " valid integer number" : null;
