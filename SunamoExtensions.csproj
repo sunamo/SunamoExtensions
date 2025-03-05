@@ -22,6 +22,7 @@
     <Folder Include="_linked\SunamoExtensions\" />
     <Folder Include="_sunamo\SunamoExceptions\" />
     <None Include="readme.md" Pack="True" PackagePath="." />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="*" Pack="True" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

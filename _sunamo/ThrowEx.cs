@@ -1,5 +1,4 @@
 namespace SunamoExtensions._sunamo;
-using System;
 
 internal class ThrowEx
 {
