@@ -53,9 +53,9 @@ public static class StringBuilderExtensions
         return name;
     }
 
-    public static StringBuilder Substring(this StringBuilder input, int indexFrom)
+    public static StringBuilder Substring(this StringBuilder input, int indexFrom = 1)
     {
-        return input.Substring(1, input.Length - 1);
+        return input.Substring(indexFrom, input.Length - 1);
     }
 
     public static StringBuilder Substring(this StringBuilder input, int index, int length)
