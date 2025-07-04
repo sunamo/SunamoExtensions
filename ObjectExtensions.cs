@@ -2,7 +2,9 @@ namespace SunamoExtensions;
 
 public static class ObjectExtensions
 {
+#pragma warning disable
     public static string GetStackTrace(this object o)
+#pragma warning restore
     {
         var st = new StackTrace();
         var v = st.ToString();
