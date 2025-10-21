@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoExtensions;
 
 public static class IListExtensions
@@ -88,9 +91,9 @@ public static class IListExtensions
     /// <returns></returns>
     public static IList<T> RemoveAt<T>(this IList<T> t, int dx)
     {
-        var l = t.ToList();
-        l.RemoveAt(dx);
-        return l;
+        var list = t.ToList();
+        list.RemoveAt(dx);
+        return list;
     }
 
     // todo DumpAsStringHeaderArgs je ve SunamoShared který nemůži přidat do deps protože by to způsobilo chybu Cycle detected

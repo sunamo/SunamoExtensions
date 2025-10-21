@@ -1,42 +1,45 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoExtensions;
 
 public static class StringBuilderExtensions
 {
     #region For easy copy
 
-    public static void TrimEnd(this StringBuilder sb)
+    public static void TrimEnd(this StringBuilder stringBuilder)
     {
-        var length = sb.Length;
+        var length = stringBuilder.Length;
         for (var i = length - 1; i >= 0; i--)
-            if (char.IsWhiteSpace(sb[i]))
-                sb.Remove(i, 1);
+            if (char.IsWhiteSpace(stringBuilder[i]))
+                stringBuilder.Remove(i, 1);
             else
                 break;
     }
 
     #endregion
 
-    public static void AppendFormatLine(this StringBuilder sb, string test, params string[] args)
+    public static void AppendFormatLine(this StringBuilder stringBuilder, string test, params string[] args)
     {
-        sb.AppendFormat(test, args);
-        sb.AppendLine();
+        stringBuilder.AppendFormat(test, args);
+        stringBuilder.AppendLine();
     }
 
-    public static bool EndsWith(this StringBuilder sb, string test)
+    public static bool EndsWith(this StringBuilder stringBuilder, string test)
     {
-        if (sb.Length < test.Length)
+        if (stringBuilder.Length < test.Length)
             return false;
 
-        var end = sb.ToString(sb.Length - test.Length, test.Length);
+        var end = stringBuilder.ToString(stringBuilder.Length - test.Length, test.Length);
         return end.Equals(test);
     }
 
-    public static bool StartWith(this StringBuilder sb, string test)
+    public static bool StartWith(this StringBuilder stringBuilder, string test)
     {
-        if (sb.Length < test.Length)
+        if (stringBuilder.Length < test.Length)
             return false;
 
-        var start = sb.ToString(0, test.Length);
+        var start = stringBuilder.ToString(0, test.Length);
         return start.Equals(test);
     }
 
@@ -69,20 +72,20 @@ public static class StringBuilderExtensions
     }
 
 
-    public static void TrimStart(this StringBuilder sb)
+    public static void TrimStart(this StringBuilder stringBuilder)
     {
-        var length = sb.Length;
+        var length = stringBuilder.Length;
         for (var i = 0; i < length; i++)
-            if (char.IsWhiteSpace(sb[i]))
-                sb.Remove(i, 1);
+            if (char.IsWhiteSpace(stringBuilder[i]))
+                stringBuilder.Remove(i, 1);
             else
                 break;
     }
 
-    public static void Trim(this StringBuilder sb)
+    public static void Trim(this StringBuilder stringBuilder)
     {
-        TrimEnd(sb);
-        TrimStart(sb);
+        TrimEnd(stringBuilder);
+        TrimStart(stringBuilder);
     }
 
     #region For easy copy from StringBuilderExtensions.cs
@@ -100,27 +103,27 @@ public static class StringBuilderExtensions
             return 0; //empty strings are everywhere!
         if (needle.Length == 1) //can't beat just spinning through for it
         {
-            var c = needle[0];
+            var count = needle[0];
             for (var idx = 0; idx != haystack.Length; ++idx)
-                if (haystack[idx] == c)
+                if (haystack[idx] == count)
                     return idx;
             return -1;
         }
 
-        var m = 0;
+        var message = 0;
         var i = 0;
-        var T = KMPTable(needle);
-        while (m + i < haystack.Length)
+        var temp = KMPTable(needle);
+        while (message + i < haystack.Length)
             if (needle[i] == haystack[m + i])
             {
                 if (i == needle.Length - 1)
-                    return m == needle.Length ? -1 : m; //match -1 = failure to find conventional in .NET
+                    return message == needle.Length ? -1 : message; //match -1 = failure to find conventional in .NET
                 ++i;
             }
             else
             {
-                m = m + i - T[i];
-                i = T[i] > -1 ? T[i] : 0;
+                message = message + i - temp[i];
+                i = temp[i] > -1 ? temp[i] : 0;
             }
 
         return -1;

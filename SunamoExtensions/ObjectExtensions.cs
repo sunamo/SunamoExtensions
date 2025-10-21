@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoExtensions;
 
 public static class ObjectExtensions
@@ -7,10 +10,10 @@ public static class ObjectExtensions
 #pragma warning restore
     {
         var st = new StackTrace();
-        var v = st.ToString();
-        var l = SHGetLines.GetLines(v);
-        l = l.ConvertAll(d => d.Trim());
-        l.RemoveAt(0);
-        return string.Join("\n", l);
+        var value = st.ToString();
+        var list = SHGetLines.GetLines(value);
+        list = list.ConvertAll(d => d.Trim());
+        list.RemoveAt(0);
+        return string.Join("\n", list);
     }
 }
