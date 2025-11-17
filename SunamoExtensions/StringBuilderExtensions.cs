@@ -114,7 +114,7 @@ public static class StringBuilderExtensions
         var i = 0;
         var temp = KMPTable(needle);
         while (message + i < haystack.Length)
-            if (needle[i] == haystack[m + i])
+            if (needle[i] == haystack[message + i])
             {
                 if (i == needle.Length - 1)
                     return message == needle.Length ? -1 : message; //match -1 = failure to find conventional in .NET
