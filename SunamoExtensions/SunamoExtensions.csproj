@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Version>25.6.7.1</Version>
     <Description>Almost all extensions method which I'm using</Description>
     <Authors>www.sunamo.cz</Authors>
@@ -22,7 +22,8 @@
     <Folder Include="_linked\SunamoExtensions\" />
     <Folder Include="_sunamo\SunamoExceptions\" />
     <None Include="readme.md" Pack="True" PackagePath="." />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" Pack="True" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3"
+      Pack="True" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
