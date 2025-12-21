@@ -1,8 +1,4 @@
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 namespace SunamoExtensions.Utf8Json;
-
-// Unity compiler can't understand this.
 
 public static class FuncExtensions
 {
