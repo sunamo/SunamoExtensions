@@ -1,12 +1,16 @@
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 namespace SunamoExtensions;
 
+/// <summary>
+/// Extension methods for Uri type
+/// </summary>
 public static class UriExtensions
 {
-#pragma warning disable
+    /// <summary>
+    /// Returns the scheme delimiter for URI
+    /// </summary>
+    /// <param name="uri">URI instance (not used, allows extension method syntax)</param>
+    /// <returns>Scheme delimiter string "://"</returns>
     public static string SchemeDelimiter(this Uri uri)
-#pragma warning restore
     {
         return "://";
     }

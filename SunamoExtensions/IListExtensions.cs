@@ -1,164 +1,186 @@
 namespace SunamoExtensions;
 
+/// <summary>
+/// Extension methods for IList and IEnumerable types
+/// </summary>
 public static class IListExtensions
 {
+    /// <summary>
+    /// Swaps two elements in the list
+    /// </summary>
+    /// <typeparam name="T">Type of elements in the list</typeparam>
+    /// <param name="list">List to modify</param>
+    /// <param name="firstIndex">Index of first element</param>
+    /// <param name="secondIndex">Index of second element</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void Swap<T>(this IList<T> list, int dx1, int dx2)
+    public static void Swap<T>(this IList<T> list, int firstIndex, int secondIndex)
     {
-        if (dx1 == dx2) //This check is not required but Partition function may make many calls so its for perf reason
+        if (firstIndex == secondIndex) //This check is not required but Partition function may make many calls so its for perf reason
             return;
-        var temp = list[dx1];
-        list[dx1] = list[dx2];
-        list[dx2] = temp;
-    }
-
-    public static object FirstOrNull(this IEnumerable e)
-    {
-        foreach (var item in e) return item;
-        return null;
-    }
-
-    public static int Count(this IEnumerable e)
-    {
-        var i = 0;
-        foreach (var item in e) i++;
-        return i;
-    }
-
-    public static void SortAsc<T>(this List<T> c)
-    {
-        c.Sort();
-    }
-
-    public static IList<T> TakeLast<T>(this IList<T> source, int N)
-    {
-        return source.Skip(Math.Max(0, source.Count - N)).ToList();
-    }
-
-    public static IList<TSource> Where2<TSource>(this IList<TSource> source, Func<TSource, bool> predicate)
-    {
-        //source.ToList().Where(predicate); - StackOverflowExtension
-        //return new List<TSource>(source).Where(predicate) ;
-        return source.ToList().Where(predicate).ToList();
-    }
-
-    public static List<object> WhereNonGeneric(this IList enu, Func<object, bool> predicate)
-    {
-        var o = new List<object>(Count(enu));
-        foreach (var item in enu) o.Add(item);
-        return o.Where(predicate).ToList();
+        var temp = list[firstIndex];
+        list[firstIndex] = list[secondIndex];
+        list[secondIndex] = temp;
     }
 
     /// <summary>
-    ///     Not direct edit
+    /// Returns the first element or null if the enumerable is empty
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="t"></param>
-    /// <returns></returns>
-    public static List<T> RemoveLast<T>(this IList<T> t)
+    /// <param name="enumerable">Enumerable to get first element from</param>
+    /// <returns>First element or null</returns>
+    public static object? FirstOrNull(this IEnumerable enumerable)
     {
-        t.RemoveAt(t.Count - 1);
-        return t.ToList();
+        foreach (var item in enumerable) return item;
+        return null;
     }
 
-    #region from IListExtensionsShared64.cs
+    /// <summary>
+    /// Counts the number of elements in the enumerable
+    /// </summary>
+    /// <param name="enumerable">Enumerable to count</param>
+    /// <returns>Number of elements</returns>
+    public static int Count(this IEnumerable enumerable)
+    {
+        var count = 0;
+        foreach (var item in enumerable) count++;
+        return count;
+    }
 
-    //public static object FirstOrNull(this IList e)
-    //{
-    //    if (e.Count > 0)
-    //    {
-    //        // Here cant call CA.ToList because in FirstOrNull is called in CA.ToList => StackOverflowException
-    //        //System.Collections.Generic.List<object> c = CAThread.ToList(e);
-    //        //return c.FirstOrDefault();
-    //        return e.First2();
-    //    }
-    //    return null;
-    //}
+    /// <summary>
+    /// Sorts the list in ascending order
+    /// </summary>
+    /// <typeparam name="T">Type of elements in the list</typeparam>
+    /// <param name="list">List to sort</param>
+    public static void SortAsc<T>(this List<T> list)
+    {
+        list.Sort();
+    }
 
-    #endregion
+    /// <summary>
+    /// Takes the last N elements from the list
+    /// </summary>
+    /// <typeparam name="T">Type of elements in the list</typeparam>
+    /// <param name="source">Source list</param>
+    /// <param name="count">Number of elements to take</param>
+    /// <returns>List containing the last N elements</returns>
+    public static IList<T> TakeLast<T>(this IList<T> source, int count)
+    {
+        return source.Skip(Math.Max(0, source.Count - count)).ToList();
+    }
+
+    /// <summary>
+    /// Filters elements based on a predicate
+    /// </summary>
+    /// <typeparam name="TSource">Type of elements in the list</typeparam>
+    /// <param name="source">Source list</param>
+    /// <param name="predicate">Predicate to filter by</param>
+    /// <returns>Filtered list</returns>
+    public static IList<TSource> Where2<TSource>(this IList<TSource> source, Func<TSource, bool> predicate)
+    {
+        return source.ToList().Where(predicate).ToList();
+    }
+
+    /// <summary>
+    /// Filters non-generic enumerable based on a predicate
+    /// </summary>
+    /// <param name="list">List to filter</param>
+    /// <param name="predicate">Predicate to filter by</param>
+    /// <returns>Filtered list of objects</returns>
+    public static List<object> WhereNonGeneric(this IList list, Func<object, bool> predicate)
+    {
+        var result = new List<object>(Count(list));
+        foreach (var item in list) result.Add(item);
+        return result.Where(predicate).ToList();
+    }
+
+    /// <summary>
+    /// Removes the last element from the list
+    /// </summary>
+    /// <typeparam name="T">Type of elements in the list</typeparam>
+    /// <param name="list">List to modify</param>
+    /// <returns>Modified list</returns>
+    public static List<T> RemoveLast<T>(this IList<T> list)
+    {
+        list.RemoveAt(list.Count - 1);
+        return list.ToList();
+    }
 
     #region For easy copy from IListExtensionsShared64Sunamo.cs
 
     /// <summary>
-    ///     Must be written with type parameter
+    /// Removes element at specified index (creates new list)
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="t"></param>
-    /// <param name="dx"></param>
-    /// <returns></returns>
-    public static IList<T> RemoveAt<T>(this IList<T> t, int dx)
+    /// <typeparam name="T">Type of elements in the list</typeparam>
+    /// <param name="list">Source list</param>
+    /// <param name="index">Index of element to remove</param>
+    /// <returns>New list with element removed</returns>
+    public static IList<T> RemoveAt<T>(this IList<T> list, int index)
     {
-        var list = t.ToList();
-        list.RemoveAt(dx);
-        return list;
+        var resultList = list.ToList();
+        resultList.RemoveAt(index);
+        return resultList;
     }
 
-    // todo DumpAsStringHeaderArgs je ve SunamoShared který nemůži přidat do deps protože by to způsobilo chybu Cycle detected
-    public static string DumpAsString<T>(this IList<T> ie, string operation, /*DumpAsStringHeaderArgs*/ object a)
+    /// <summary>
+    /// Dumps the list as a string representation
+    /// </summary>
+    /// <typeparam name="T">Type of elements in the list</typeparam>
+    /// <param name="list">List to dump</param>
+    /// <param name="operation">Operation name</param>
+    /// <param name="args">Additional arguments</param>
+    /// <returns>String representation</returns>
+    /// <exception cref="Exception">This method is not implemented</exception>
+    public static string DumpAsString<T>(this IList<T> list, string operation, object args)
     {
         throw new Exception("Nemůže tu být protože DumpListAsStringOneLine jsem přesouval do sunamo a tam už zůstane");
-        //
-        //return RH.DumpListAsStringOneLine(operation, ie, a);
     }
-
-    #region Must be two coz in some projects is not Dispatcher
-
-    //public static object FirstOrNull(this IList e)
-    //{
-    //    return se.IListExtensions.FirstOrNull(e);
-    //}
 
     #region Cant be first because then have priority than LINQ method
 
     /// <summary>
-    ///     Cant be first because then have priority than LINQ method
-    ///     musel bych ke každé přidávat typový argument
-    ///     => Renamed to 2
+    /// Returns the first element or null (renamed to avoid conflict with LINQ First)
     /// </summary>
-    /// <param name="e"></param>
-    /// <returns></returns>
-    public static object First2(this IList e)
+    /// <param name="list">List to get first element from</param>
+    /// <returns>First element or null</returns>
+    public static object? First2(this IList list)
     {
-        return FirstOrNull(e);
+        return FirstOrNull(list);
     }
 
     #endregion
 
     #endregion
 
-    public static int Length2<T>(this IList<T> e)
+    /// <summary>
+    /// Returns the length of the list
+    /// </summary>
+    /// <typeparam name="T">Type of elements in the list</typeparam>
+    /// <param name="list">List to get length of</param>
+    /// <returns>Number of elements</returns>
+    public static int Length2<T>(this IList<T> list)
     {
-        return Enumerable.Count(e);
-        //return CA.Count(e);
+        return Enumerable.Count(list);
     }
 
     /// <summary>
-    ///     přejmenoval jsem po převodu na global usings
+    /// Counts elements in the list (renamed to avoid conflict with LINQ Count)
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="e"></param>
-    /// <returns></returns>
-    public static int Count2<T>(this IList<T> e)
+    /// <typeparam name="T">Type of elements in the list</typeparam>
+    /// <param name="list">List to count</param>
+    /// <returns>Number of elements</returns>
+    public static int Count2<T>(this IList<T> list)
     {
-        return Enumerable.Count(e);
-        //return CA.Count(e);
+        return Enumerable.Count(list);
     }
 
     /// <summary>
-    ///     Usage: in many places coz in Extensions is standard IList
-    ///     The call is ambiguous between the following methods or properties:
-    ///     'IListExtensions.Count(System.Collections.IList)' and 'IListExtensions.Count(System.Collections.IList)'
-    ///     IListExtensions je pouze ve SunExt, i po pushi nového package furt to samé.
-    ///     přejmenováno na 3 a kdyžtak užívat Enumerable.Count
+    /// Counts elements in non-generic list (renamed to avoid ambiguity)
     /// </summary>
-    /// <param name="e"></param>
-    /// <returns></returns>
-    public static int Count3(this IList e)
+    /// <param name="list">List to count</param>
+    /// <returns>Number of elements</returns>
+    public static int Count3(this IList list)
     {
-        var i = 0;
-        foreach (var item in e) i++;
-        return i;
+        var count = 0;
+        foreach (var item in list) count++;
+        return count;
     }
-
-    #endregion
 }

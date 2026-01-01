@@ -1,6 +1,8 @@
 namespace SunamoExtensions._sunamo;
 
-//namespace SunamoExtensions._sunamo.SunamoExceptions._AddedToAllCsproj;
+/// <summary>
+/// File system helper class (currently empty placeholder)
+/// </summary>
 internal class FS
 {
 }

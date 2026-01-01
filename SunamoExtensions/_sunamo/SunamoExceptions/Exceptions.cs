@@ -1,21 +1,31 @@
 namespace SunamoExtensions._sunamo.SunamoExceptions;
 
 // © www.sunamo.cz. All Rights Reserved.
+
+/// <summary>
+/// Exception handling utilities
+/// </summary>
 internal sealed partial class Exceptions
 {
     #region Other
 
-    internal static string TextOfExceptions(Exception ex, bool alsoInner = true)
+    /// <summary>
+    /// Converts exception and optionally its inner exceptions to a text representation
+    /// </summary>
+    /// <param name="exception">Exception to convert</param>
+    /// <param name="isIncludingInner">Whether to include inner exceptions</param>
+    /// <returns>String representation of the exception(s)</returns>
+    internal static string TextOfExceptions(Exception exception, bool isIncludingInner = true)
     {
-        if (ex == null) return string.Empty;
+        if (exception == null) return string.Empty;
         StringBuilder stringBuilder = new();
         stringBuilder.Append("Exception:");
-        stringBuilder.AppendLine(ex.Message);
-        if (alsoInner)
-            while (ex.InnerException != null)
+        stringBuilder.AppendLine(exception.Message);
+        if (isIncludingInner)
+            while (exception.InnerException != null)
             {
-                ex = ex.InnerException;
-                stringBuilder.AppendLine(ex.Message);
+                exception = exception.InnerException;
+                stringBuilder.AppendLine(exception.Message);
             }
         var result = stringBuilder.ToString();
         return result;
@@ -24,11 +34,11 @@ internal sealed partial class Exceptions
     #endregion
 
     #region IsNullOrWhitespace
-    readonly static StringBuilder sbAdditionalInfoInner = new();
-    readonly static StringBuilder sbAdditionalInfo = new();
+    internal readonly static StringBuilder AdditionalInfoInnerStringBuilder = new();
+    internal readonly static StringBuilder AdditionalInfoStringBuilder = new();
     #endregion
 
-    #region OnlyReturnString 
+    #region OnlyReturnString
 
 
 

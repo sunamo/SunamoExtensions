@@ -1,23 +1,39 @@
 namespace extensions.Tests;
 
+/// <summary>
+/// Test data for IEnumerable extension tests
+/// </summary>
 public static class TestData
 {
-    public static readonly List<int> _123 = new List<int> { 1, 2, 3 };
-    public static readonly List<int> _321 = new List<int> { 3, 2, 1 };
+    /// <summary>
+    /// List containing [1, 2, 3]
+    /// </summary>
+    public static readonly List<int> OneTwoThree = new List<int> { 1, 2, 3 };
+
+    /// <summary>
+    /// List containing [3, 2, 1]
+    /// </summary>
+    public static readonly List<int> ThreeTwoOne = new List<int> { 3, 2, 1 };
 }
 
+/// <summary>
+/// Tests for IEnumerable extension methods
+/// </summary>
 public class IEnumerableExtensionsTests
 {
+    /// <summary>
+    /// Tests the SortAsc method
+    /// </summary>
     [Fact]
     public void SortAscTest()
     {
-        List<int> l1 = new List<int>(TestData._123);
-        List<int> l2 = new List<int>(TestData._321);
+        List<int> ascendingList = new List<int>(TestData.OneTwoThree);
+        List<int> descendingList = new List<int>(TestData.ThreeTwoOne);
 
-        l1.SortAsc();
-        l2.SortAsc();
+        ascendingList.SortAsc();
+        descendingList.SortAsc();
 
-        Assert.Equal(TestData._123, l1);
-        Assert.Equal(TestData._123, l2);
+        Assert.Equal(TestData.OneTwoThree, ascendingList);
+        Assert.Equal(TestData.OneTwoThree, descendingList);
     }
 }
