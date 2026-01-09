@@ -17,9 +17,9 @@ public static class IListExtensions
     {
         if (firstIndex == secondIndex) //This check is not required but Partition function may make many calls so its for perf reason
             return;
-        var temp = list[firstIndex];
+        var temporaryValue = list[firstIndex];
         list[firstIndex] = list[secondIndex];
-        list[secondIndex] = temp;
+        list[secondIndex] = temporaryValue;
     }
 
     /// <summary>
@@ -131,7 +131,7 @@ public static class IListExtensions
     /// <exception cref="Exception">This method is not implemented</exception>
     public static string DumpAsString<T>(this IList<T> list, string operation, object args)
     {
-        throw new Exception("Nemůže tu být protože DumpListAsStringOneLine jsem přesouval do sunamo a tam už zůstane");
+        throw new Exception("Cannot be here because DumpListAsStringOneLine was moved to sunamo and will remain there");
     }
 
     #region Cant be first because then have priority than LINQ method

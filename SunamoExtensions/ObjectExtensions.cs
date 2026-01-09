@@ -12,8 +12,8 @@ public static class ObjectExtensions
     /// <returns>Formatted stack trace string with each frame on a new line</returns>
     public static string GetStackTrace(this object obj)
     {
-        var st = new StackTrace();
-        var value = st.ToString();
+        var stackTrace = new StackTrace();
+        var value = stackTrace.ToString();
         var list = SHGetLines.GetLines(value);
         list = list.ConvertAll(line => line.Trim());
         list.RemoveAt(0);

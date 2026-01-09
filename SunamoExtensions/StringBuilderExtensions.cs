@@ -171,26 +171,26 @@ public static class StringBuilderExtensions
         if (value.Length == 1) //can't beat just spinning through for it
         {
             var searchChar = value[0];
-            for (var idx = 0; idx != stringBuilder.Length; ++idx)
-                if (stringBuilder[idx] == searchChar)
-                    return idx;
+            for (var index = 0; index != stringBuilder.Length; ++index)
+                if (stringBuilder[index] == searchChar)
+                    return index;
             return -1;
         }
 
         var currentIndex = 0;
-        var i = 0;
+        var patternIndex = 0;
         var kmpTable = KMPTable(value);
-        while (currentIndex + i < stringBuilder.Length)
-            if (value[i] == stringBuilder[currentIndex + i])
+        while (currentIndex + patternIndex < stringBuilder.Length)
+            if (value[patternIndex] == stringBuilder[currentIndex + patternIndex])
             {
-                if (i == value.Length - 1)
+                if (patternIndex == value.Length - 1)
                     return currentIndex == value.Length ? -1 : currentIndex; //match -1 = failure to find conventional in .NET
-                ++i;
+                ++patternIndex;
             }
             else
             {
-                currentIndex = currentIndex + i - kmpTable[i];
-                i = kmpTable[i] > -1 ? kmpTable[i] : 0;
+                currentIndex = currentIndex + patternIndex - kmpTable[patternIndex];
+                patternIndex = kmpTable[patternIndex] > -1 ? kmpTable[patternIndex] : 0;
             }
 
         return -1;

@@ -36,8 +36,8 @@ public static class TaskExtensions
     {
         task.ContinueWith(completedTask =>
             {
-                var aggException = completedTask.Exception!.Flatten();
-                throw new Exception(Exceptions.TextOfExceptions(aggException));
+                var aggregateException = completedTask.Exception!.Flatten();
+                throw new Exception(Exceptions.TextOfExceptions(aggregateException));
             },
             TaskContinuationOptions.OnlyOnFaulted);
     }
