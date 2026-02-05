@@ -1,7 +1,5 @@
 namespace SunamoExtensions._sunamo.SunamoExceptions;
 
-// © www.sunamo.cz. All Rights Reserved.
-
 /// <summary>
 /// Exception handling utilities
 /// </summary>

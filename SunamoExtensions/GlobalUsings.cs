@@ -17,8 +17,6 @@ global using SunamoExtensions;
 global using SunamoExtensions.Utf8Json;
 global using SunamoExtensions._sunamo;
 global using SunamoExtensions._sunamo.SunamoExceptions;
-global using SunamoExtensions.Helpers;
-global using SunamoExtensions._System.IO;
 global using ILogger = Microsoft.Extensions.Logging.ILogger;
 global using Microsoft.Extensions.Logging;
 global using NullLogger = Microsoft.Extensions.Logging.Abstractions.NullLogger;

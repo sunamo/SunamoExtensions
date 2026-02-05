@@ -68,53 +68,53 @@ public static class StringBuilderExtensions
     /// <summary>
     /// Removes all occurrences of the specified suffix from the end of the StringBuilder
     /// </summary>
-    /// <param name="input">StringBuilder to process</param>
+    /// <param name="stringBuilder">StringBuilder to process</param>
     /// <param name="suffix">Suffix to remove</param>
     /// <returns>StringBuilder with suffix removed</returns>
-    public static StringBuilder TrimEnd(this StringBuilder input, string suffix)
+    public static StringBuilder TrimEnd(this StringBuilder stringBuilder, string suffix)
     {
-        while (input.EndsWith(suffix)) return input.Substring(0, input.Length - suffix.Length);
-        return input;
+        while (stringBuilder.EndsWith(suffix)) return stringBuilder.Substring(0, stringBuilder.Length - suffix.Length);
+        return stringBuilder;
     }
 
     /// <summary>
     /// Removes all occurrences of the specified prefix from the start of the StringBuilder
     /// </summary>
-    /// <param name="input">StringBuilder to process</param>
+    /// <param name="stringBuilder">StringBuilder to process</param>
     /// <param name="prefix">Prefix to remove</param>
     /// <returns>StringBuilder with prefix removed</returns>
-    public static StringBuilder TrimStart(this StringBuilder input, string prefix)
+    public static StringBuilder TrimStart(this StringBuilder stringBuilder, string prefix)
     {
-        while (input.StartWith(prefix)) return input.Substring(prefix.Length, input.Length - prefix.Length);
-        return input;
+        while (stringBuilder.StartWith(prefix)) return stringBuilder.Substring(prefix.Length, stringBuilder.Length - prefix.Length);
+        return stringBuilder;
     }
 
     /// <summary>
     /// Retrieves a substring from this StringBuilder starting at the specified position
     /// </summary>
-    /// <param name="input">StringBuilder to extract from</param>
+    /// <param name="stringBuilder">StringBuilder to extract from</param>
     /// <param name="indexFrom">Starting position (default: 1)</param>
     /// <returns>Substring as StringBuilder</returns>
-    public static StringBuilder Substring(this StringBuilder input, int indexFrom = 1)
+    public static StringBuilder Substring(this StringBuilder stringBuilder, int indexFrom = 1)
     {
-        return input.Substring(indexFrom, input.Length - 1);
+        return stringBuilder.Substring(indexFrom, stringBuilder.Length - 1);
     }
 
     /// <summary>
     /// Retrieves a substring from this StringBuilder with specified start position and length
     /// </summary>
-    /// <param name="input">StringBuilder to extract from</param>
+    /// <param name="stringBuilder">StringBuilder to extract from</param>
     /// <param name="index">Starting position</param>
     /// <param name="length">Number of characters to extract</param>
     /// <returns>Substring as StringBuilder</returns>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when index or length is out of range</exception>
-    public static StringBuilder Substring(this StringBuilder input, int index, int length)
+    public static StringBuilder Substring(this StringBuilder stringBuilder, int index, int length)
     {
         var subString = new StringBuilder();
-        if (index + length - 1 >= input.Length || index < 0)
+        if (index + length - 1 >= stringBuilder.Length || index < 0)
             throw new ArgumentOutOfRangeException("Index out of range!");
         var endIndex = index + length;
-        for (var i = index; i < endIndex; i++) subString.Append(input[i]);
+        for (var i = index; i < endIndex; i++) subString.Append(stringBuilder[i]);
         return subString;
     }
 
