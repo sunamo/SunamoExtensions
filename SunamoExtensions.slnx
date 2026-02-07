@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoExtensions.Tests\\SunamoExtensions.Tests.csproj" />
+  <Project Path="RunnerExtensions\\RunnerExtensions.csproj" />
+  <Project Path="SunamoExtensions\SunamoExtensions.csproj" />
+</Solution>
