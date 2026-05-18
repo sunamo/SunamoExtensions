@@ -3,17 +3,17 @@
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <TargetFrameworks>net10.0;net9.0;net8.0</TargetFrameworks>
-    <Version>26.2.23.1</Version>
+    <Version>26.5.18.5</Version>
     <Description>Almost all extensions method which I'm using</Description>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
-    <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>
+    <PackageProjectUrl>https://sunamo.github.io/PlatformIndependentNuGetPackages/SunamoExtensions/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/sunamo/SunamoExtensions.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageReleaseNotes>feat: fixing variables names</PackageReleaseNotes>
+    <PackageReleaseNotes>y</PackageReleaseNotes>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
     <IncludeSymbols>true</IncludeSymbols>
