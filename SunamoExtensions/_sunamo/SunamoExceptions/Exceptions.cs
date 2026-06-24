@@ -1,18 +1,9 @@
 namespace SunamoExtensions._sunamo.SunamoExceptions;
 
-/// <summary>
-/// Exception handling utilities
-/// </summary>
 internal sealed partial class Exceptions
 {
     #region Other
 
-    /// <summary>
-    /// Converts exception and optionally its inner exceptions to a text representation
-    /// </summary>
-    /// <param name="exception">Exception to convert</param>
-    /// <param name="isIncludingInner">Whether to include inner exceptions</param>
-    /// <returns>String representation of the exception(s)</returns>
     internal static string TextOfExceptions(Exception exception, bool isIncludingInner = true)
     {
         if (exception == null) return string.Empty;
