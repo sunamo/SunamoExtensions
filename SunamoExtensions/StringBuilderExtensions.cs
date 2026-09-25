@@ -1,9 +1,16 @@
 namespace SunamoExtensions;
 
+/// <summary>
+/// Extension methods for StringBuilder type
+/// </summary>
 public static class StringBuilderExtensions
 {
     #region For easy copy
 
+    /// <summary>
+    /// Removes trailing whitespace from the end of the StringBuilder
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to trim</param>
     public static void TrimEnd(this StringBuilder stringBuilder)
     {
         var length = stringBuilder.Length;
@@ -16,12 +23,24 @@ public static class StringBuilderExtensions
 
     #endregion
 
+    /// <summary>
+    /// Appends a formatted string followed by a line terminator
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to append to</param>
+    /// <param name="format">Format string</param>
+    /// <param name="args">Format arguments</param>
     public static void AppendFormatLine(this StringBuilder stringBuilder, string format, params string[] args)
     {
         stringBuilder.AppendFormat(format, args);
         stringBuilder.AppendLine();
     }
 
+    /// <summary>
+    /// Determines whether the end of the StringBuilder matches the specified string
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to check</param>
+    /// <param name="value">String to compare</param>
+    /// <returns>True if StringBuilder ends with the specified value</returns>
     public static bool EndsWith(this StringBuilder stringBuilder, string value)
     {
         if (stringBuilder.Length < value.Length)
@@ -31,6 +50,12 @@ public static class StringBuilderExtensions
         return end.Equals(value);
     }
 
+    /// <summary>
+    /// Determines whether the beginning of the StringBuilder matches the specified string
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to check</param>
+    /// <param name="value">String to compare</param>
+    /// <returns>True if StringBuilder starts with the specified value</returns>
     public static bool StartWith(this StringBuilder stringBuilder, string value)
     {
         if (stringBuilder.Length < value.Length)
@@ -40,23 +65,49 @@ public static class StringBuilderExtensions
         return start.Equals(value);
     }
 
+    /// <summary>
+    /// Removes all occurrences of the specified suffix from the end of the StringBuilder
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to process</param>
+    /// <param name="suffix">Suffix to remove</param>
+    /// <returns>StringBuilder with suffix removed</returns>
     public static StringBuilder TrimEnd(this StringBuilder stringBuilder, string suffix)
     {
         while (stringBuilder.EndsWith(suffix)) return stringBuilder.Substring(0, stringBuilder.Length - suffix.Length);
         return stringBuilder;
     }
 
+    /// <summary>
+    /// Removes all occurrences of the specified prefix from the start of the StringBuilder
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to process</param>
+    /// <param name="prefix">Prefix to remove</param>
+    /// <returns>StringBuilder with prefix removed</returns>
     public static StringBuilder TrimStart(this StringBuilder stringBuilder, string prefix)
     {
         while (stringBuilder.StartWith(prefix)) return stringBuilder.Substring(prefix.Length, stringBuilder.Length - prefix.Length);
         return stringBuilder;
     }
 
+    /// <summary>
+    /// Retrieves a substring from this StringBuilder starting at the specified position
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to extract from</param>
+    /// <param name="indexFrom">Starting position (default: 1)</param>
+    /// <returns>Substring as StringBuilder</returns>
     public static StringBuilder Substring(this StringBuilder stringBuilder, int indexFrom = 1)
     {
         return stringBuilder.Substring(indexFrom, stringBuilder.Length - 1);
     }
 
+    /// <summary>
+    /// Retrieves a substring from this StringBuilder with specified start position and length
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to extract from</param>
+    /// <param name="index">Starting position</param>
+    /// <param name="length">Number of characters to extract</param>
+    /// <returns>Substring as StringBuilder</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when index or length is out of range</exception>
     public static StringBuilder Substring(this StringBuilder stringBuilder, int index, int length)
     {
         var subString = new StringBuilder();
@@ -67,6 +118,10 @@ public static class StringBuilderExtensions
         return subString;
     }
 
+    /// <summary>
+    /// Removes leading whitespace from the start of the StringBuilder
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to trim</param>
     public static void TrimStart(this StringBuilder stringBuilder)
     {
         var length = stringBuilder.Length;
@@ -77,6 +132,10 @@ public static class StringBuilderExtensions
                 break;
     }
 
+    /// <summary>
+    /// Removes leading and trailing whitespace from the StringBuilder
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to trim</param>
     public static void Trim(this StringBuilder stringBuilder)
     {
         TrimEnd(stringBuilder);
@@ -85,11 +144,24 @@ public static class StringBuilderExtensions
 
     #region For easy copy from StringBuilderExtensions.cs
 
+    /// <summary>
+    /// Determines whether the StringBuilder contains the specified string
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to search in</param>
+    /// <param name="value">String to search for</param>
+    /// <returns>True if the string is found</returns>
     public static bool Contains(this StringBuilder stringBuilder, string value)
     {
         return stringBuilder.IndexOf(value) != -1;
     }
 
+    /// <summary>
+    /// Returns the index of the first occurrence of the specified string in the StringBuilder
+    /// </summary>
+    /// <param name="stringBuilder">StringBuilder to search in</param>
+    /// <param name="value">String to search for</param>
+    /// <returns>Index of the first occurrence, or -1 if not found</returns>
+    /// <exception cref="ArgumentNullException">Thrown when stringBuilder or value is null</exception>
     public static int IndexOf(this StringBuilder stringBuilder, string value)
     {
         if (stringBuilder == null || value == null)
@@ -124,6 +196,11 @@ public static class StringBuilderExtensions
         return -1;
     }
 
+    /// <summary>
+    /// Creates a Knuth-Morris-Pratt (KMP) table for pattern matching
+    /// </summary>
+    /// <param name="sought">Pattern string to create table for</param>
+    /// <returns>KMP table array</returns>
     private static int[] KMPTable(string sought)
     {
         var table = new int[sought.Length];
