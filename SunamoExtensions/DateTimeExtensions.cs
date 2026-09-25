@@ -11,9 +11,7 @@ public static class DateTimeExtensions
     /// <param name="dateTime">DateTime to convert</param>
     /// <returns>Time string in format "HH:mm:ss"</returns>
     public static string ToLongTimeString(this DateTime dateTime)
-    {
-        return dateTime.Hour + ":" + dateTime.Minute + ":" + dateTime.Second;
-    }
+        => $"{dateTime.Hour}:{dateTime.Minute}:{dateTime.Second}";
 
     /// <summary>
     /// Converts DateTime to short time string format (HH:mm)
@@ -21,9 +19,7 @@ public static class DateTimeExtensions
     /// <param name="dateTime">DateTime to convert</param>
     /// <returns>Time string in format "HH:mm"</returns>
     public static string ToShortTimeString(this DateTime dateTime)
-    {
-        return dateTime.Hour + ":" + dateTime.Minute;
-    }
+        => $"{dateTime.Hour}:{dateTime.Minute}";
 
     /// <summary>
     /// Converts nullable DateTime to short date string, returns empty string if null
