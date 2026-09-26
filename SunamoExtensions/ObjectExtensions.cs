@@ -1,3 +1,4 @@
+#pragma warning disable IDE0060 // parametry zachovány kvůli veřejnému API
 namespace SunamoExtensions;
 
 /// <summary>
