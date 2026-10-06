@@ -1,5 +1,10 @@
 # SunamoExtensions
 
+## Short description
+
+Téměř všechny rozšiřující metody, které autor běžně používá.
+
+
 Almost all extensions method which I'm using
 
 ## Overview

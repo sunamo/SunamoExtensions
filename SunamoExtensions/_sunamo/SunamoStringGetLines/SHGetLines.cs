@@ -1,15 +1,7 @@
 namespace SunamoExtensions._sunamo.SunamoStringGetLines;
 
-/// <summary>
-/// String helper for getting lines from text
-/// </summary>
 internal class SHGetLines
 {
-    /// <summary>
-    /// Splits text into lines by various newline patterns
-    /// </summary>
-    /// <param name="text">Text to split into lines</param>
-    /// <returns>List of lines</returns>
     internal static List<string> GetLines(string text)
     {
         var parts = text.Split(new string[] { "\r\n", "\n\r" }, StringSplitOptions.None).ToList();
@@ -17,21 +9,12 @@ internal class SHGetLines
         return parts;
     }
 
-    /// <summary>
-    /// Splits lines by Unix newline patterns
-    /// </summary>
-    /// <param name="lines">Lines to split</param>
     private static void SplitByUnixNewline(List<string> lines)
     {
         SplitBy(lines, "\r");
         SplitBy(lines, "\n");
     }
 
-    /// <summary>
-    /// Splits lines by a specific delimiter
-    /// </summary>
-    /// <param name="lines">Lines to split</param>
-    /// <param name="delimiter">Delimiter to split by</param>
     private static void SplitBy(List<string> lines, string delimiter)
     {
         for (int i = lines.Count - 1; i >= 0; i--)
@@ -60,12 +43,6 @@ internal class SHGetLines
         }
     }
 
-    /// <summary>
-    /// Inserts items at a specific index in the list
-    /// </summary>
-    /// <param name="lines">Target list</param>
-    /// <param name="itemsToInsert">Items to insert</param>
-    /// <param name="index">Index to insert at</param>
     private static void InsertOnIndex(List<string> lines, List<string> itemsToInsert, int index)
     {
         itemsToInsert.Reverse();
