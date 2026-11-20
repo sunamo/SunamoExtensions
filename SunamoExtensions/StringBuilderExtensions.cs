@@ -1,9 +1,16 @@
 namespace SunamoExtensions;
 
+/// <summary>
+/// Represents the string builder extensions type.
+/// </summary>
 public static class StringBuilderExtensions
 {
     #region For easy copy
 
+    /// <summary>
+    /// Trim end.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
     public static void TrimEnd(this StringBuilder stringBuilder)
     {
         var length = stringBuilder.Length;
@@ -16,12 +23,24 @@ public static class StringBuilderExtensions
 
     #endregion
 
+    /// <summary>
+    /// Append format line.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="format">The format.</param>
+    /// <param name="args">The args.</param>
     public static void AppendFormatLine(this StringBuilder stringBuilder, string format, params string[] args)
     {
         stringBuilder.AppendFormat(format, args);
         stringBuilder.AppendLine();
     }
 
+    /// <summary>
+    /// Ends with.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="value">The value.</param>
+    /// <returns>The ends with result.</returns>
     public static bool EndsWith(this StringBuilder stringBuilder, string value)
     {
         if (stringBuilder.Length < value.Length)
@@ -31,6 +50,12 @@ public static class StringBuilderExtensions
         return end.Equals(value);
     }
 
+    /// <summary>
+    /// Start with.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="value">The value.</param>
+    /// <returns>The start with result.</returns>
     public static bool StartWith(this StringBuilder stringBuilder, string value)
     {
         if (stringBuilder.Length < value.Length)
@@ -40,23 +65,48 @@ public static class StringBuilderExtensions
         return start.Equals(value);
     }
 
+    /// <summary>
+    /// Trim end.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="suffix">The suffix.</param>
+    /// <returns>The trim end result.</returns>
     public static StringBuilder TrimEnd(this StringBuilder stringBuilder, string suffix)
     {
         while (stringBuilder.EndsWith(suffix)) return stringBuilder.Substring(0, stringBuilder.Length - suffix.Length);
         return stringBuilder;
     }
 
+    /// <summary>
+    /// Trim start.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="prefix">The prefix.</param>
+    /// <returns>The trim start result.</returns>
     public static StringBuilder TrimStart(this StringBuilder stringBuilder, string prefix)
     {
         while (stringBuilder.StartWith(prefix)) return stringBuilder.Substring(prefix.Length, stringBuilder.Length - prefix.Length);
         return stringBuilder;
     }
 
+    /// <summary>
+    /// Substring.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="indexFrom">The index from.</param>
+    /// <returns>The substring result.</returns>
     public static StringBuilder Substring(this StringBuilder stringBuilder, int indexFrom = 1)
     {
         return stringBuilder.Substring(indexFrom, stringBuilder.Length - 1);
     }
 
+    /// <summary>
+    /// Substring.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="index">The index.</param>
+    /// <param name="length">The length.</param>
+    /// <returns>The substring result.</returns>
     public static StringBuilder Substring(this StringBuilder stringBuilder, int index, int length)
     {
         var subString = new StringBuilder();
@@ -67,6 +117,10 @@ public static class StringBuilderExtensions
         return subString;
     }
 
+    /// <summary>
+    /// Trim start.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
     public static void TrimStart(this StringBuilder stringBuilder)
     {
         var length = stringBuilder.Length;
@@ -77,6 +131,10 @@ public static class StringBuilderExtensions
                 break;
     }
 
+    /// <summary>
+    /// Trim.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
     public static void Trim(this StringBuilder stringBuilder)
     {
         TrimEnd(stringBuilder);
@@ -85,11 +143,23 @@ public static class StringBuilderExtensions
 
     #region For easy copy from StringBuilderExtensions.cs
 
+    /// <summary>
+    /// Contains.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="value">The value.</param>
+    /// <returns>The contains result.</returns>
     public static bool Contains(this StringBuilder stringBuilder, string value)
     {
         return stringBuilder.IndexOf(value) != -1;
     }
 
+    /// <summary>
+    /// Index of.
+    /// </summary>
+    /// <param name="stringBuilder">The string builder.</param>
+    /// <param name="value">The value.</param>
+    /// <returns>The index of result.</returns>
     public static int IndexOf(this StringBuilder stringBuilder, string value)
     {
         if (stringBuilder == null || value == null)

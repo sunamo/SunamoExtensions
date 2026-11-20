@@ -1,8 +1,16 @@
 #pragma warning disable IDE0060 // parameters kept because of the public API
 namespace SunamoExtensions;
 
+/// <summary>
+/// Represents the object extensions type.
+/// </summary>
 public static class ObjectExtensions
 {
+    /// <summary>
+    /// Get stack trace.
+    /// </summary>
+    /// <param name="obj">The obj.</param>
+    /// <returns>The get stack trace result.</returns>
     public static string GetStackTrace(this object obj)
     {
         var stackTrace = new StackTrace();
